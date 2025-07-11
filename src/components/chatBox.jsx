@@ -53,7 +53,7 @@ const ChatBox = ({ isScrolled, item }) => {
         <View
           className={`${isViewed ? 'bg-[pink]' : 'bg-[black]'} w-full mb-[10px] h-[30px] justify-center items-center rounded-[10px]`}
         >
-          <Text className={`dark:text-[red] text-[blue]`}>{item.txt}</Text>
+          <Text className={`dark:text-[red] text-[blue]`}>{item?.txt}</Text>
         </View>
       </Pressable>
     </Animated.View>

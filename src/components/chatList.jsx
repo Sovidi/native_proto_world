@@ -8,8 +8,8 @@ import useScrollCounter from '../hooks/useScrollCounter';
 const ChatList = () => {
   const { data, fetchFn } = useFetchComp();
   const { chatData, socket } = useWebsocketFetchComp();
-  const [reversedChatData, setReversedChatData] = useState([]);
   const { isScrolled, counting } = useScrollCounter();
+  const [reversedChatData, setReversedChatData] = useState([]);
   const [inputText, setInputText] = useState('');
 
   useEffect(() => {
