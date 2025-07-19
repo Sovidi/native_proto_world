@@ -5,16 +5,15 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { StatusBar, StyleSheet, useColorScheme } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import 'react-native-reanimated';
-import './global.css';
+import '@/global.css';
 
-import Home from './src/screens/home';
-import Detail from './src/screens/detail';
+import Home from '@/src/screens/home';
+import Dogs from '@/src/screens/dogs';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -27,7 +26,7 @@ function App() {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <Tab.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Detail" component={Detail} />
+        <Stack.Screen name="Dogs" component={Dogs} />
       </Tab.Navigator>
     </NavigationContainer>
   );
