@@ -14,6 +14,7 @@ import '@/global.css';
 
 import Home from '@/src/screens/home';
 import Dogs from '@/src/screens/dogs';
+import Cgn from './src/screens/cgn';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -27,6 +28,7 @@ function App() {
       <Tab.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Dogs" component={Dogs} />
+        <Stack.Screen name="Cgn" component={Cgn} />
       </Tab.Navigator>
     </NavigationContainer>
   );
