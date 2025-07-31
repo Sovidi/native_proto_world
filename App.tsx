@@ -18,6 +18,8 @@ import Cgn from '@/src/screens/cgn';
 import Onflou from '@/src/screens/onflou';
 import SurpriseBox from '@/src/components/surpriseBox';
 
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -27,12 +29,38 @@ function App() {
   return (
     <NavigationContainer>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <Tab.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Dogs" component={Dogs} />
-        <Stack.Screen name="Cgn" component={Cgn} />
-        <Stack.Screen name="Onflou" component={Onflou} />
-        <Stack.Screen name="Surprise" component={SurpriseBox} />
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          // 아이콘 설정
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === 'Home') {
+              iconName = focused ? 'book' : 'book-outline';
+            } else if (route.name === 'Dogs') {
+              iconName = focused ? 'beer' : 'beer-outline';
+            } else if (route.name === 'Cgn') {
+              iconName = focused ? 'flash' : 'flash-outline';
+            } else if (route.name === 'Onflou') {
+              iconName = focused ? 'megaphone' : 'megaphone-outline';
+            } else if (route.name === 'Surprise') {
+              iconName = focused ? 'megaphone' : 'megaphone-outline';
+            }
+
+            // Ionicons 아이콘 렌더링
+            return <Ionicons name={iconName!} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: 'tomato',
+          tabBarInactiveTintColor: 'gray',
+          headerShown: false, // 상단 타이틀바 숨기기 (선택사항)
+        })}
+        initialRouteName="Home"
+      >
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Dogs" component={Dogs} />
+        <Tab.Screen name="Cgn" component={Cgn} />
+        <Tab.Screen name="Onflou" component={Onflou} />
+        <Tab.Screen name="Surprise" component={SurpriseBox} />
       </Tab.Navigator>
     </NavigationContainer>
   );
