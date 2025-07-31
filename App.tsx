@@ -14,8 +14,9 @@ import '@/global.css';
 
 import Home from '@/src/screens/home';
 import Dogs from '@/src/screens/dogs';
-import Cgn from './src/screens/cgn';
-import Onflou from './src/screens/onflou';
+import Cgn from '@/src/screens/cgn';
+import Onflou from '@/src/screens/onflou';
+import SurpriseBox from '@/src/components/surpriseBox';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -31,6 +32,7 @@ function App() {
         <Stack.Screen name="Dogs" component={Dogs} />
         <Stack.Screen name="Cgn" component={Cgn} />
         <Stack.Screen name="Onflou" component={Onflou} />
+        <Stack.Screen name="Surprise" component={SurpriseBox} />
       </Tab.Navigator>
     </NavigationContainer>
   );

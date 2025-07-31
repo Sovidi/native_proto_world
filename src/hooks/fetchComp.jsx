@@ -5,7 +5,7 @@ const useFetchComp = () => {
   const [data, setData] = useState([]);
 
   const instance = axios.create({
-    baseURL: 'http://192.168.219.100:3080/',
+    baseURL: 'http://211.218.241.240:3080/',
   });
 
   const fetchFn = async (type, data) => {
