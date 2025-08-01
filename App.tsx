@@ -44,7 +44,7 @@ function App() {
             } else if (route.name === 'Onflou') {
               iconName = focused ? 'megaphone' : 'megaphone-outline';
             } else if (route.name === 'Surprise') {
-              iconName = focused ? 'megaphone' : 'megaphone-outline';
+              iconName = focused ? 'fast-food' : 'fast-food-outline';
             }
 
             // Ionicons 아이콘 렌더링

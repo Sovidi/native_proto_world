@@ -5,7 +5,7 @@ import useWebsocketFetchComp from '../hooks/websocketFetchComp';
 import ChatBox from './chatBox';
 import useScrollCounter from '../hooks/useScrollCounter';
 
-const ChatList = () => {
+const ChatList = ({ navigation }) => {
   const { data, fetchFn } = useFetchComp();
   const { chatData, socket } = useWebsocketFetchComp();
   const { isScrolled, counting } = useScrollCounter();
@@ -33,21 +33,25 @@ const ChatList = () => {
   };
 
   return (
-    <View className={`w-full h-screen justify-start items-center`}>
+    <View className={`w-full h-screen justify-start items-center mt-30`}>
       <FlatList
         onScroll={() => {
           counting();
         }}
-        className={`w-[90%]`}
+        className={`w-[100%] px-[20px]`}
         data={chatData}
         keyExtractor={(item, key) => key}
         renderItem={({ item }) => (
-          <ChatBox isScrolled={isScrolled} item={item} />
+          <ChatBox
+            isScrolled={isScrolled}
+            item={item}
+            navigation={navigation}
+          />
         )}
       />
       <View
         className={
-          'w-full h-fit py-10 flex-row justify-between items-center mb-170'
+          'w-full h-fit py-10 flex-row justify-between items-center mb-90'
         }
       >
         <TextInput

@@ -8,7 +8,7 @@ import Animated, {
   Easing,
 } from 'react-native-reanimated';
 
-const ChatBox = ({ isScrolled, item }) => {
+const ChatBox = ({ isScrolled, item, navigation }) => {
   const { targetRef, isViewed, intersecting } = useIntersectionObserver();
 
   const opacity = useSharedValue(0);
@@ -42,7 +42,7 @@ const ChatBox = ({ isScrolled, item }) => {
     <Animated.View ref={targetRef} style={[animatedStyle]}>
       <Pressable
         onPress={() => {
-          // navigation.navigate('Detail');
+          // navigation.navigate('Dogs');
         }}
         style={({ pressed }) => ({
           backgroundColor: pressed ? '#ddd' : '#ccc',
@@ -53,7 +53,7 @@ const ChatBox = ({ isScrolled, item }) => {
         <View
           className={`${isViewed ? 'bg-[pink]' : 'bg-[black]'} w-full mb-[10px] h-[30px] justify-center items-center rounded-[10px]`}
         >
-          <Text className={`dark:text-[red] text-[blue]`}>{item?.txt}</Text>
+          <Text className={`dark:text-[white] text-[black]`}>{item?.txt}</Text>
         </View>
       </Pressable>
     </Animated.View>
