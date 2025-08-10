@@ -4,7 +4,7 @@ import { io } from 'socket.io-client';
 const useWebsocketFetchComp = () => {
   const [chatData, setChatData] = useState([]);
 
-  const socket = io(`http://211.218.241.240:3090/`);
+  const socket = io(`http://192.168.219.104:3090/`);
 
   useEffect(() => {
     socket.on('connect', async e => {
